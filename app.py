@@ -19,7 +19,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("🏠 Smart Home Energy Management System")
+st.title("Smart Home Energy Management System")
 
 st.markdown(
     "Intelligent energy scheduling to reduce electricity "
@@ -33,7 +33,7 @@ st.divider()
 # ELECTRICITY TARIFF
 # -----------------------------------
 
-st.sidebar.header("⚡ Electricity Tariff")
+st.sidebar.header("Electricity Tariff")
 
 night_rate = st.sidebar.number_input(
     "Night rate (₹/kWh)",
@@ -81,7 +81,7 @@ for hour in range(24):
 # APPLIANCE INPUTS
 # -----------------------------------
 
-st.header("🔌 Household Appliance Configuration")
+st.header("Household Appliance Configuration")
 
 st.write(
     "Enter appliance details and preferred operating hours."
@@ -99,7 +99,7 @@ for index, item in enumerate(default_appliances):
 
     name, power, duration, start, end = item
 
-    with st.expander(f"⚙️ {name}", expanded=True):
+    with st.expander(f"{name}", expanded=True):
 
         col1, col2 = st.columns(2)
 
@@ -151,7 +151,7 @@ for index, item in enumerate(default_appliances):
 # PEAK DEMAND LIMIT
 # -----------------------------------
 
-st.header("⚡ Energy Management Settings")
+st.header("Energy Management Settings")
 
 max_demand = st.number_input(
     "Maximum allowed household demand (kW)",
@@ -166,7 +166,7 @@ max_demand = st.number_input(
 # OPTIMIZATION
 # -----------------------------------
 
-if st.button("🚀 Optimize Energy Schedule", type="primary"):
+if st.button("Optimize Energy Schedule", type="primary"):
 
     try:
 
@@ -246,7 +246,7 @@ if st.button("🚀 Optimize Energy Schedule", type="primary"):
 
         st.divider()
 
-        st.header("📊 Optimization Results")
+        st.header("Optimization Results")
 
         col1, col2, col3, col4 = st.columns(4)
 
@@ -276,7 +276,7 @@ if st.button("🚀 Optimize Energy Schedule", type="primary"):
 
         st.divider()
 
-        st.header("📉 Normal vs Optimized Performance")
+        st.header("Normal vs Optimized Performance")
 
         col1, col2 = st.columns(2)
 
@@ -317,7 +317,7 @@ if st.button("🚀 Optimize Energy Schedule", type="primary"):
         # APPLIANCE SCHEDULE
         # -----------------------------------
 
-        st.subheader("🕒 Optimized Appliance Schedule")
+        st.subheader("Optimized Appliance Schedule")
 
         schedule_data = []
 
@@ -356,7 +356,7 @@ if st.button("🚀 Optimize Energy Schedule", type="primary"):
         # DEMAND COMPARISON GRAPH
         # -----------------------------------
 
-        st.subheader("📈 Normal vs Optimized Electricity Demand")
+        st.subheader("Normal vs Optimized Electricity Demand")
 
         demand_df = pd.DataFrame({
             "Hour": [f"{h:02d}:00" for h in range(24)],
@@ -393,7 +393,7 @@ if st.button("🚀 Optimize Energy Schedule", type="primary"):
         # ELECTRICITY COST GRAPH
         # -----------------------------------
 
-        st.subheader("💰 Hourly Electricity Cost")
+        st.subheader("Hourly Electricity Cost")
 
         cost_df = pd.DataFrame({
             "Hour": [f"{h:02d}:00" for h in range(24)],
